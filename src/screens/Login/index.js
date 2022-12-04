@@ -31,7 +31,7 @@ export default function Login() {
 
             <ContainerHeader>
 
-                <Logo  src={`${window.location.origin}/logo512.png`}  />
+                <Logo  src={`${window.location.origin}/logo2.png`}  />
 
             </ContainerHeader>
             
