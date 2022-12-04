@@ -64,3 +64,10 @@ export const ContainerHeader = styled.div`
     justify-content: center;
     align-items: center;
 `
+
+
+export const Logo = styled.img`
+    object-fit: contain;
+    width: 200px;
+    height: 200px;
+`

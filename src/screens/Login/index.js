@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Wallpaper } from "../../styled";
+import { Container, ContainerHeader, Logo, Wallpaper } from "../../styled";
 import { Audio, AudioMute } from "../../styled";
 
 
@@ -22,12 +22,18 @@ export default function Login() {
             <Wallpaper
                 autoPlay={true}
                 loop={true}
-                muted={mute}
+               
             >
                 <source src={`${window.location.origin}/video/video_fundo.mp4`} type='video/mp4' />
             
             </Wallpaper>
 
+
+            <ContainerHeader>
+
+                <Logo  src={`${window.location.origin}/logo512.png`}  />
+
+            </ContainerHeader>
             
 
 
