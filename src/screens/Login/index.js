@@ -1,40 +1,71 @@
 import React from "react";
-import { Container, ContainerHeader, Logo, Wallpaper } from "../../styled";
+import ModalLogin from "../../components/ModalLogin";
+import { Container, ContainerHeader, Logo, Wallpaper, ContainerStart, StartButton, TextButton } from "../../styled";
 import { Audio, AudioMute } from "../../styled";
 
 
 
 export default function Login() {
 
-    const [mute, setMute] = React.useState(false);
+    const wallpaper = React.useRef(null);
+
+    const [mute, setMute] = React.useState(true);
+
 
 
     const handleMute = () => {
         setMute(!mute)
     }
 
+ 
+
+    React.useEffect(() => {
+        
+    }, [])
+
     return (
 
-        <Container> 
+        <Container>
 
-            {!mute ? <Audio onClick={() => handleMute()}/> : <AudioMute onClick={() => handleMute()} />}
+            <ModalLogin />
+
+            {!mute ? <Audio onClick={() => handleMute()} /> : <AudioMute onClick={() => handleMute()} />}
 
             <Wallpaper
-                autoPlay={true}
-                loop={true}
-               
+                autoPlay
+                loop
+                muted={mute}
+                controls={false}
+                ref={wallpaper}
             >
-                <source src={`${window.location.origin}/video/video_fundo.mp4`} type='video/mp4' />
-            
+                <source src={`./video/fundo.mp4`} type="video/mp4" />
+
             </Wallpaper>
 
 
             <ContainerHeader>
 
-                <Logo  src={`${window.location.origin}/logo2.png`}  />
+                <Logo src={`${window.location.origin}/logo2.png`} />
 
             </ContainerHeader>
-            
+
+
+
+
+            <ContainerStart>
+
+
+                <StartButton >
+
+                    <TextButton>
+                        ENTRAR NO GIDEX
+                    </TextButton>
+
+                    </StartButton>
+
+
+            </ContainerStart>
+
 
 
 
