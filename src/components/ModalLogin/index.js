@@ -52,21 +52,66 @@ export default function ModalLogin(props) {
                 senha,
             });
 
-            console.log(response)
+            console.log(response.data)
 
             localStorage.setItem('token', response.data.token);
+
+            localStorage.setItem('logo', response.data.img);
+
+            localStorage.setItem('nome', response.data.nome);
+
 
             return navigate('/home', { replace: true });
 
         } catch (err) {
-            alert("Erro ao logar!")
+
+            alert("Erro ao Registrar-se!")
+
             setLoading(false)
+
             console.log(err)
         }
 
+    }
 
+
+    const Registrar = async () => {
+
+        try {
+            console.log({
+                email,
+                senha,
+                nome: username,
+                img,
+            })
+            const response = await api.post('usuarios/create', {
+                email,
+                senha,
+                nome: username,
+                img,
+            });
+
+            localStorage.setItem('token', response.data.token);
+
+            localStorage.setItem('logo', img);
+
+            localStorage.setItem('nome', response.data.nome);
+
+            return navigate('/home', { replace: true });
+
+        } catch (err) {
+
+            alert("Erro ao logar!")
+
+            setLoading(false)
+
+            console.log(err)
+        }
 
     }
+
+
+
 
 
     React.useEffect(() => {
@@ -95,7 +140,11 @@ export default function ModalLogin(props) {
             Login()
 
         } else {
-            alert('registro')
+
+            setLoading(true)
+
+            Registrar()
+
         }
     }
 
@@ -103,11 +152,15 @@ export default function ModalLogin(props) {
 
         if (img) {
 
+            console.log(img.size)
+
             const string64 = await Util.convertBase64(img)
 
             setImg(string64)
 
         } else {
+
+            setImg('')
 
             alert('img nao encontrada!');
         }
@@ -146,7 +199,7 @@ export default function ModalLogin(props) {
 
                 <ContainerInputs>
 
-                    {registro && <InputsModalLogin onChange={(e) => setEmail(e.currentTarget.value)} placeholder='username' type={'text'} />}
+                    {registro && <InputsModalLogin onChange={(e) => setUsername(e.currentTarget.value)} placeholder='username' type={'text'} />}
 
                     <InputsModalLogin onChange={(e) => setEmail(e.currentTarget.value)} placeholder='email' type={'email'} />
 
@@ -156,13 +209,13 @@ export default function ModalLogin(props) {
 
                     <ButaoLoginModal onClick={() => handleLogin()} >
 
-                        {!loading ? ( registro ? "Registrar-se" : "ENTRAR" ) : <Spinner animation="border" style={{ color: '#5225a1' }} />}
+                        {!loading ? (registro ? "Registrar-se" : "ENTRAR") : <Spinner animation="border" style={{ color: '#5225a1' }} />}
 
                     </ButaoLoginModal>
 
                     <LinkRegistrar onClick={() => setRegistro(!registro)}>
 
-                       {!registro ? "Registrar-se" : "Logar-se" }
+                        {!registro ? "Registrar-se" : "Logar-se"}
 
                     </LinkRegistrar>
 
