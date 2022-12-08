@@ -10,6 +10,7 @@ export default createGlobalStyle`
     font-family: 'oswald';
     src: url('./gifont.ttf');
 }
+
 `;
 
 export const Container = styled.div`
@@ -136,7 +137,7 @@ export const FundoPreto = styled.div`
     background-color: rgba(0,0,0,0.5);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: ${window.innerWidth < 600 ? "" : "center"};
     position: absolute;
     z-index: 999;
 `
@@ -147,12 +148,11 @@ export const ContainerModalLogin = styled.div`
         display:flex;
         flex-direction: column;
         align-content: space-between;
-        justify-content: space-around;
-        width: 80%;
+        width:  ${window.innerWidth < 380 ? "97%" : "80%"};
         max-width: 400px;
         position: relative;
-        height: 70vh;
-        max-height: 400px;
+        height: ${props => props.registro ? "85vh" : "70vh"};
+        max-height: ${props => props.registro ? "600px" : "400px"};;
         margin-top: 100px;
         border-radius: 5px;
    
@@ -164,6 +164,7 @@ export const ContainerButaoExcluideModal = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
+        user-select: none;
         width: 40px;
         height: 40px;
         position: absolute;
@@ -173,10 +174,6 @@ export const ContainerButaoExcluideModal = styled.div`
         margin-right: 20px;
         margin-top: 20px;
 
-        &:active{
-            opacity: 0.7;
-        }
-
 `
 
 
@@ -184,7 +181,6 @@ export const ButaoExcluideModal = styled(BsXLg)`
         user-select: none;
         width: 20px;
         height: 20px;
-        
         color: #666666;
 `
 
@@ -203,6 +199,7 @@ export const TituloLoginModal = styled.span`
         user-select: none;
         font-family: oswald;
         letter-spacing: 2.5px;
+        margin-bottom: 3%;
         color: #666666;
         font-size: 24px;
         text-align: center;
@@ -210,14 +207,79 @@ export const TituloLoginModal = styled.span`
 
 export const ContainerInputs = styled.div`
     
-    background-color: red;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-top: 5%;
-    height: 70%;
+    justify-content: space-evenly;
+    margin-top: 0%;
+    height: 75%;
     align-items: center;
 
+
+`
+
+
+export const InputsModalLogin = styled.input`
+
+    width: 80%;
+    border-radius: 12px;
+    background-color: #d1cbcb;
+    border: 2px solid #393b40;
+    padding-left: 20px;
+    font-family: oswald;
+    margin-top: -15px;
+    margin-bottom: -15px;
+    outline: none;
+    height: 40px;
+
+    &::placeholder{
+        color: #3a3a3a;
+    }
+
+    &:focus-visible{
+        outline: 1px solid #ddbe65;
+    }
+    
+`
+
+export const ButaoLoginModal = styled.div`
+
+    width: 85%;
+    background-color: #2b2c30;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;    
+    user-select: none;
+    color: white;
+    display: flex;
+    letter-spacing: 1.5px;
+    font-family: oswald;
+    border-radius: 4px;
+
+    &:active{
+        background-color: #1d1149;
+        opacity: 0.5;
+    }
+
+`
+
+export const  LinkRegistrar = styled.span`
+
+    color: #2b2c30;
+   
+    text-decoration: underline;
+    
+    letter-spacing: 1.5px;
+    
+    font-size: 19px;
+    
+    margin-top: -20px;
+    
+    cursor: pointer;
+
+    &:active{
+        opacity: 0.5;
+    }
 
 `

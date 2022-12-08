@@ -11,6 +11,8 @@ export default function Login() {
 
     const [mute, setMute] = React.useState(true);
 
+    const [openModalLogin, setOpenModalLogin] = React.useState(false)
+
 
 
     const handleMute = () => {
@@ -27,7 +29,7 @@ export default function Login() {
 
         <Container>
 
-            <ModalLogin />
+           {openModalLogin ?  <ModalLogin onExit={() => {setOpenModalLogin(false)}} /> : "" } 
 
             {!mute ? <Audio onClick={() => handleMute()} /> : <AudioMute onClick={() => handleMute()} />}
 
@@ -55,7 +57,7 @@ export default function Login() {
             <ContainerStart>
 
 
-                <StartButton >
+                <StartButton onClick={() => {setOpenModalLogin(true)}}>
 
                     <TextButton>
                         ENTRAR NO GIDEX
