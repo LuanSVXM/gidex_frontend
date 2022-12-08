@@ -7,7 +7,7 @@ import { BsFillVolumeMuteFill, BsFillVolumeDownFill, BsXLg } from "react-icons/b
 export default createGlobalStyle`
  
 @font-face {
-    font-family: 'oswald';
+    font-family: 'gifont';
     src: url('./gifont.ttf');
 }
 
@@ -89,6 +89,15 @@ export const Logo = styled.img`
     margin-top: 10px;
 `
 
+export const LogoSide = styled.img`
+    user-select: none;
+    object-fit: contain;
+
+    width: 300px;
+    height: 300px;
+    margin: -40px;
+`
+
 
 export const ContainerStart = styled.div`
     height: 69vh;
@@ -127,7 +136,7 @@ export const TextButton = styled.span`
     cursor: pointer;
     user-select: none;
     font-size: 42px;
-    font-family: oswald;
+    font-family: gifont;
     color: #FFF;
 `
 
@@ -197,7 +206,7 @@ export const Row = styled.div`
 
 export const TituloLoginModal = styled.span`
         user-select: none;
-        font-family: oswald;
+        font-family: gifont;
         letter-spacing: 2.5px;
         margin-bottom: 3%;
         color: #666666;
@@ -226,7 +235,7 @@ export const InputsModalLogin = styled.input`
     background-color: #d1cbcb;
     border: 2px solid #393b40;
     padding-left: 20px;
-    font-family: oswald;
+    font-family: gifont;
     margin-top: -15px;
     margin-bottom: -15px;
     outline: none;
@@ -254,7 +263,7 @@ export const ButaoLoginModal = styled.div`
     color: white;
     display: flex;
     letter-spacing: 1.5px;
-    font-family: oswald;
+    font-family: gifont;
     border-radius: 4px;
 
     &:active{
@@ -296,7 +305,7 @@ export const ContainerSideRender = styled.div`
 export const RenderDiv = styled.div`
     width: ${window.innerWidth-280}px;
     height: 100%;
-    background-color: blue;
+    background-color: #262a54;
     overflow: scroll;
     scrollbar-width: none;  
     &::-webkit-scrollbar{
@@ -307,7 +316,10 @@ export const RenderDiv = styled.div`
 export const ContainerSideBar = styled.div`
     width: 280px;
     height: 100%;
-    background-color: green;
+    background-color: #181b38;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     overflow: scroll;
     scrollbar-width: none;  
     &::-webkit-scrollbar{
@@ -318,5 +330,76 @@ export const ContainerSideBar = styled.div`
 export const ContainerHeader = styled.div`
     height: 10vh;
     width: 100vw;
-    background-color: yellow;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    background-color: #111329;
+`
+
+export const ContainerItensSideBar = styled.div`
+
+    width: 90%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1.5%;
+    cursor: pointer;
+    padding-bottom: 1.5%;
+    align-items: center;
+    border-radius: 20px;
+
+    &:hover{
+        background-color: #3c4496;
+    }
+    
+    &:active{
+        opacity: 0.5;
+    }
+
+`
+
+export const LogoItensSideBar = styled.img`
+
+        height: 40px;
+        width: 40px;
+        object-fit: contain;
+        cursor: pointer;
+        
+`
+
+export const SpanItensSideBar = styled.span`
+
+        color: white;
+        font-family: gifont;
+        font-size: 20px;
+        margin-left: 8%;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        cursor: pointer;
+        user-select: none;
+
+`
+
+export const FotoHeader = styled.img`
+
+    height: 70px;
+    width: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+
+`
+
+export const UsernameHeader = styled.span`
+
+    font-size: 20px;
+    font-family: gifont;
+    color: white;
+    letter-spacing: 1.3px;
+    margin-right: 20px;
+
 `
