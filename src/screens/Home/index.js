@@ -4,11 +4,16 @@ import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
 import SideBar from "../../components/SideBar";
 import { ContainerSideRender, RenderDiv } from "../../styled";
+import Render from "../../components/Render";
 
 
 export default function Home() {
 
     const navigate = useNavigate();
+
+    const [abas, setAba] = React.useState("")
+
+    const [token, setToken] = React.useState('')
 
     React.useEffect(() => {
 
@@ -23,6 +28,11 @@ export default function Home() {
             return
 
         };
+
+        setToken(token)
+
+        setAba("personagens")
+
     }, [])
 
     return (
@@ -32,9 +42,9 @@ export default function Home() {
 
             <ContainerSideRender>
 
-                <SideBar />
+                <SideBar onChange={(route) => setAba(route) } />
 
-                <RenderDiv />
+                <Render token={token} render={abas} />
 
             </ContainerSideRender>
 

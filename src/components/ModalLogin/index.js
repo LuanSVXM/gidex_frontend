@@ -65,7 +65,7 @@ export default function ModalLogin(props) {
 
         } catch (err) {
 
-            alert("Erro ao Registrar-se!")
+            alert("Erro ao Logar-se!")
 
             setLoading(false)
 
@@ -101,7 +101,7 @@ export default function ModalLogin(props) {
 
         } catch (err) {
 
-            alert("Erro ao logar!")
+            alert("Erro ao Registrar-se!")
 
             setLoading(false)
 

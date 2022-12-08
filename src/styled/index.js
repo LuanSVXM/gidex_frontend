@@ -403,3 +403,105 @@ export const UsernameHeader = styled.span`
     margin-right: 20px;
 
 `
+
+export const ContainerPersonagens = styled.div`
+    width: 100%;
+    height: 89%;
+    display: flex;
+    padding-left: 5%;
+    padding-right: 5%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+`
+
+
+
+
+export const ContainerDetalhesModalPersonagem = styled.div`
+    
+    max-height: 0px;
+    transition:  max-height 0.20s ease-out;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+`
+
+export const ContainerModalPersonagem = styled.div`
+    width: 31%;
+    max-width: 350px;
+    background-image: url(${props => props.fundo ? props.fundo : ''});
+    object-fit: cover;
+    height: 85%;
+    border: white 2px solid;
+    background-size: cover;
+    background-color: rgba(0,0,0,0.2);
+    display: flex;
+    align-items: flex-end;
+
+    &:hover ${ContainerDetalhesModalPersonagem} {
+        height: 60%;
+        max-height: 60%;
+        transition:  max-height 0.20s ease-in;
+    }
+`
+
+export const PropriedadesSpanPersonagens = styled.span`
+    
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+`
+
+export const ContainerPagination = styled.div`
+
+    width: 100%;
+    height: 10%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    
+`
+
+export const ContainerPage = styled.div`
+
+    height: 50px;
+
+    width: 50px;
+
+    margin-left: 10px;
+
+    margin-right: 10px;
+
+    border-radius: 50%;
+
+    background-color: #5225a1;
+
+    text-align: center;
+
+    display: flex;
+    
+    justify-content: center;
+    
+    align-items: center;
+
+    font-size: 24px;
+
+    color: white;
+
+    user-select: none;
+
+
+`
+
+

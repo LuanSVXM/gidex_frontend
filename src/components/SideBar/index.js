@@ -1,9 +1,19 @@
 import React from "react";
 import { ContainerItensSideBar, ContainerSideBar, LogoItensSideBar, LogoSide, SpanItensSideBar } from "../../styled";
+import { ImExit } from 'react-icons/im';
+import { useNavigate } from "react-router-dom";
 
+export default function SideBar(props) {
 
-export default function SideBar() {
+    const navigate = useNavigate();
 
+    const Sair = () => {
+
+        localStorage.removeItem('token');
+
+        navigate('/', { refresh: true })
+
+    }
 
     return (
 
@@ -13,7 +23,7 @@ export default function SideBar() {
             <LogoSide src="./gidex2.png" />
 
 
-            <ContainerItensSideBar>
+            <ContainerItensSideBar onClick={() => props.onChange('personagens')}>
 
                 <LogoItensSideBar src="./icons/characters.png" />
 
@@ -28,6 +38,24 @@ export default function SideBar() {
                 <SpanItensSideBar> Inventario </SpanItensSideBar>
 
             </ContainerItensSideBar>
+
+
+
+            <ContainerItensSideBar onClick={() => Sair()}>
+
+
+                <ImExit style={{
+                    height: 32,
+                    width: 32,
+                    color: 'white'
+                }} />
+
+                <SpanItensSideBar> Sair Da Conta </SpanItensSideBar>
+
+            </ContainerItensSideBar>
+
+
+
 
         </ContainerSideBar>
 
