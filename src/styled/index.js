@@ -67,7 +67,7 @@ export const Audio = styled(BsFillVolumeDownFill)`
 `
 
 
-export const ContainerHeader = styled.div`
+export const ContainerHeaderLogin = styled.div`
     height: 30vh;
     width: 100%;
     display: flex;
@@ -282,4 +282,41 @@ export const  LinkRegistrar = styled.span`
         opacity: 0.5;
     }
 
+`
+
+
+export const ContainerSideRender = styled.div`
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+`
+
+
+export const RenderDiv = styled.div`
+    width: ${window.innerWidth-280}px;
+    height: 100%;
+    background-color: blue;
+    overflow: scroll;
+    scrollbar-width: none;  
+    &::-webkit-scrollbar{
+        display: none;
+    }
+`
+
+export const ContainerSideBar = styled.div`
+    width: 280px;
+    height: 100%;
+    background-color: green;
+    overflow: scroll;
+    scrollbar-width: none;  
+    &::-webkit-scrollbar{
+        display: none;
+    }
+`
+
+export const ContainerHeader = styled.div`
+    height: 10vh;
+    width: 100vw;
+    background-color: yellow;
 `

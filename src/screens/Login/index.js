@@ -1,6 +1,6 @@
 import React from "react";
 import ModalLogin from "../../components/ModalLogin";
-import { Container, ContainerHeader, Logo, Wallpaper, ContainerStart, StartButton, TextButton } from "../../styled";
+import { Container, Logo, Wallpaper, ContainerStart, StartButton, TextButton, ContainerHeaderLogin } from "../../styled";
 import { Audio, AudioMute } from "../../styled";
 
 
@@ -45,11 +45,11 @@ export default function Login() {
             </Wallpaper>
 
 
-            <ContainerHeader>
+            <ContainerHeaderLogin>
 
                 <Logo src={`${window.location.origin}/logo2.png`} />
 
-            </ContainerHeader>
+            </ContainerHeaderLogin>
 
 
 
